@@ -1,5 +1,25 @@
 ---
-title: "Untitled"
+title: "Quarto 2"
+author: Wayne DeFreitas
 format: html
+execute:
+    echo: false
 ---
 
+```{r}
+#| message: false
+
+library(tidyverse)
+library(palmerpenguins)
+```
+
+```{r}
+#| warning: false
+
+penguins |> 
+  ggplot(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
+    geom_point() +
+    labs(title = "Penguins Body Mass compared to Flipper Length", 
+         x = "Body Mass", 
+         y = "Flipper Length")
+```
